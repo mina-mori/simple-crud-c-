@@ -10,6 +10,7 @@ namespace Application.Mappers
         {
             CreateMap<User, UserViewModel>().ForMember(dest => dest.AlphabetizeUserName, opt => opt.MapFrom(src => StringHelper.AlphabetizeUserName(src.FirstName + " " + src.LastName)));
             ;
+            CreateMap<User, UserViewModel>().ForMember(dest => dest.FullName, opt => opt.MapFrom(src => src.FirstName + " " + src.LastName));
             CreateMap<UserViewModel, User>();
             CreateMap<AddEditUserViewModel, User>();
         }
